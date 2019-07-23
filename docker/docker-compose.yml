@@ -1,0 +1,14 @@
+version: "2.3"
+services:
+  sfserver:
+    image: "ubuntu_sshd:SFServer"
+    user: "root"
+    working_dir: /root/SFServer
+    volumes:
+      - ./Server-YSQFace:/root/SFServer
+    
+    network_mode: "host"
+
+    restart: always
+    command: python SFServer.py
+

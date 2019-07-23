@@ -1,0 +1,38 @@
+docker pull maoym/yklab_djgserver:v0.0
+docker images
+docker tag xxxxx  yk:tag
+docker save
+
+docker load < xxx:tag
+docker run -it yklab_django:v0.0 /bin/bash
+
+
+
+create docker images:
+
+Dockerfile
+
+FROM python:3.6
+ENV PYTHONUNBUFFERED 1
+RUN apt-get update && \
+	DEBIAN_FRONTEND=noninteractive apt-get -yq install sqlite3 && \
+	rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN mkdir /code
+WORKDIR /code
+ADD requirements.txt /code/
+RUN pip install -r requirements.txt
+ADD . /code/
+
+
+requirment 
+
+Django
+zmq
+django-registration
+stripe
+mysql
+apscheduler==2.1.2
+opencv-python
+
+
+docker build -t NAME:TAG .
