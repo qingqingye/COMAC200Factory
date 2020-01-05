@@ -22,12 +22,12 @@ workersThroughGate = []
 workersInRegion = [0,0,0,0,0,0,0,0]
 workersInRegion1min=[0,0,0,0,0,0,0,0]
 avgRate=0
-#faceRecUrl = "http://192.168.3.198:5000/mes/recognize"
-faceRecUrl = 'http://192.168.3.222:5000/mes/recognize'
-weblip='192.168.3.254'
-localip = "192.168.3.254"
-# faceRecUrl = "http://10.5.6.151:8080/mes/recognize"
-# localip = "192.168.1.187"
+#faceRecUrl = "http://19x.xxx.xxx.xxx/mes/recognize"
+faceRecUrl = 'http://192x.xxx.xxx.xxx/mes/recognize'
+weblip='192.xx.xxx.x'
+localip = "192.xx.xx.x"
+# faceRecUrl = "http://10.xx.xxmes/recognize"
+# localip = "192.xx.xx.xx"
 
 
 def TableGate():
@@ -241,16 +241,16 @@ class DataProcessor():
             self.regionReceivers[i-1].registerCallback(regionCallback)
             self.regionReceivers[i-1].startCallbacks()
 
-        self.faceReceiverIn = socketReceiver("tcp://"+localip,"16000")
+        self.faceReceiverIn = socketReceiver("tcp://"+localip,"XXXX")
         self.faceReceiverIn.registerCallback(faceCallback)
         self.faceReceiverIn.startCallbacks()
 
-        self.faceReceiverOut = socketReceiver("tcp://"+localip,"16001")
+        self.faceReceiverOut = socketReceiver("tcp://"+localip,"xxxxxx")
         self.faceReceiverOut.registerCallback(faceCallback)
         self.faceReceiverOut.startCallbacks()
 
 
-        self.thereDmapReceiver = socketReceiver("tcp://localhost","5565")
+        self.thereDmapReceiver = socketReceiver("tcp://localhost","xxxxx")
 
 
 
