@@ -1,2 +1,4 @@
 # COMAC200Factory
-a private document for my work
+This case has finished in 2018. 
+So I publicate it. 
+You can study the Django framework and docker
